@@ -1,6 +1,6 @@
 ---
 date: 2023-09-08T18:50:18.44061838+09:00[Asia/Tokyo]
-author: undefined
+author: example
 ---
 
 First post.

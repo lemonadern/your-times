@@ -1,9 +1,6 @@
 {
-  "kt3k": {
-    "name": "Yoshiya",
-    "url": "http://kt3k.org"
-  },
-  "okomekirai": {
-    "name": "あずき"
+  "example": {
+    "name": "Example User",
+    "url": "http://example.com"
   }
 }

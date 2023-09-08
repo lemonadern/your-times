@@ -13,7 +13,7 @@ import { formatMonthId } from "util/date.ts";
 import Post from "components/post.tsx";
 import Footer from "components/footer.tsx";
 import AddNewPostLink from "components/AddNewPostLink.tsx";
-import { SITE_NAME } from "util/const.ts";
+import { AUTHOR_ID, GITHUB_REPOSITORY_URL, SITE_NAME, SITE_URL } from "util/const.ts";
 import { Temporal } from "esm/@js-temporal/polyfill@0.4.4";
 
 export default async function Home(_req: Request, _ctx: RouteContext) {
@@ -25,7 +25,7 @@ export default async function Home(_req: Request, _ctx: RouteContext) {
     months.push(item.name);
   }
   const posts = await getPostsForMonths(months);
-  const ogImage = `https://times.kt3k.org/og-image.png`;
+  const ogImage = `${SITE_URL}/og-image.png`;
   const description = `HOME / ${SITE_NAME}`;
   return (
     <>
@@ -40,8 +40,7 @@ export default async function Home(_req: Request, _ctx: RouteContext) {
         <meta property="twitter:title" content={description} />
       </Head>
       <div class="pt-3 px-7">
-        #times-
-        <a class="hover:underline" href="https://kt3k.org">kt3k</a>
+        #{SITE_NAME}
       </div>
       <hr class="mt-3 border-gray-700" />
       {posts.map(([month, posts]) => (
@@ -61,8 +60,8 @@ export default async function Home(_req: Request, _ctx: RouteContext) {
           ))}
         </>
       ))}
-      <AddNewPostLink newPostUrl={`https://github.com/kt3k/times-kt3k/new/main/tl/${thisMonthId}?filename=${nextFileName}&value=${encodeURIComponent(
-        defaultPost(Temporal.Now.zonedDateTimeISO(), "kt3k"),
+      <AddNewPostLink newPostUrl={`${GITHUB_REPOSITORY_URL}/new/main/tl/${thisMonthId}?filename=${nextFileName}&value=${encodeURIComponent(
+        defaultPost(Temporal.Now.zonedDateTimeISO(), AUTHOR_ID),
       )
         }`} />
 

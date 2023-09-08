@@ -6,7 +6,7 @@ import { getPostById } from "util/post.ts";
 import { formatMonthId } from "util/date.ts";
 import Post from "components/post.tsx";
 import Footer from "components/footer.tsx";
-import { SITE_NAME } from "util/const.ts";
+import { OG_IMAGE_URL, SITE_NAME } from "util/const.ts";
 
 export default async function Permalink(_req: Request, ctx: RouteContext) {
   const monthId = ctx.params[0];
@@ -17,7 +17,7 @@ export default async function Permalink(_req: Request, ctx: RouteContext) {
   }
   const text = post.html.replace(/<[^>]+>/g, "").trim();
   const description = `${post.author}: "${text}"`;
-  const ogImage = `https://times.kt3k.org/${monthId}.png`;
+  const ogImage = OG_IMAGE_URL;
   return (
     <>
       <Head>

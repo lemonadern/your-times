@@ -6,14 +6,14 @@ import { getPostsForMonth } from "util/post.ts";
 import { formatMonthId } from "util/date.ts";
 import Post from "components/post.tsx";
 import Footer from "components/footer.tsx";
-import { SITE_NAME } from "util/const.ts";
+import { OG_IMAGE_URL, SITE_NAME } from "util/const.ts";
 
 export default async function Month(req: Request, ctx: RouteContext) {
   const monthId = ctx.params[0];
   const posts = await getPostsForMonth(monthId);
   const month = formatMonthId(monthId);
   const description = `${month} / ${SITE_NAME}`;
-  const ogImage = `https://times.kt3k.org/${monthId}.png`;
+  const ogImage = OG_IMAGE_URL;
   return (
     <>
       <Head>
