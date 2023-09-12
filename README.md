@@ -1,7 +1,21 @@
 [@kt3k](https://github.com/kt3k)氏の[タイムライン](https://times.kt3k.org/)を真似して自分用に作るためのテンプレートです。
+（MIT License）
 
 fork元のリポジトリ：https://github.com/kt3k/times-kt3k
 
+## はじめかた
+
+1. このテンプレートから新しくリポジトリを生成する
+1. `util/const.ts`で宣言されている定数を書き換える
+   - `SITE_URL`: デプロイ先のURL
+   - `GITHUB_REPOSITORY_URL`: 自分のリポジトリのURL
+   - `AUTHOR_ID`: 自分用のID
+1. `authors.json`を書き換え・または追記する
+   - オブジェクトのキー名がID
+   - name は表示名
+1. Deno Deploy にデプロイする
+
+```
 ## デフォルトで配置されている画像について
 
 デフォルトのOG画像は
@@ -11,3 +25,4 @@ Oroni</a>氏による写真（Unsplash License）です。
 example_user
 のアイコンは<a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E7%B7%91%E8%89%B2%E3%81%AE%E7%9B%AE%E3%82%92%E3%81%97%E3%81%9F%E7%8C%AB%E3%81%AE%E6%8E%A5%E5%86%99-R4pCVw5tzF0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>の<a href="https://unsplash.com/ja/@edgar_infocus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Edgar.infocus</a>氏による写真（Unsplash
 License）です。
+```
